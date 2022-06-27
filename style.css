@@ -13,6 +13,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 .center {
@@ -93,10 +94,17 @@ html {
 /* Navbar _____________________________________*/
 
 .navbar {
+  position: absolute;
+  z-index: 300;
   width: 100%;
   height: 4rem;
   background-color: #e41c6f;
   box-shadow: 0.2rem 0.2rem 0.5rem #555;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
 }
 
 .navbar-link {
@@ -108,6 +116,10 @@ html {
   letter-spacing: 0.3rem;
   text-transform: uppercase;
   transition: color 0.2s;
+}
+
+.change.navbar-link {
+  color: #fff;
 }
 
 .navbar-link::before {
@@ -123,6 +135,10 @@ html {
 
 .navbar-link:hover {
   color: #fff;
+}
+
+.change.navbar-link::before {
+  width: 130%;
 }
 
 .navbar-link:hover::before {
@@ -170,10 +186,11 @@ html {
 }
 
 .progress-percent {
-  width: 90%;
+  width: 0;
   height: 100%;
   background-color: #e41c6f;
   border-radius: 0.3rem;
+  transition: width 0.5s 0.5s ease-in-out;
 }
 
 .services {
